@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DermVision - Professional Skin Analysis</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="notification" class="notification hidden"></div>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-content">
+      <a href="#" class="logo" onclick="showView('hero')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        DermVision
+      </a>
+      <div class="nav-links" id="navLinks">
+        <!-- Dynamic Links -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- Views -->
+  <main id="mainContent">
+    
+    <!-- Hero View -->
+    <section id="heroView" class="animate-fade-in">
+      <div class="hero">
+        <div class="container">
+          <h1>Advanced AI for <span>Skin Cancer</span> Detection</h1>
+          <p>DermVision utilizes state-of-the-art multimodal Artificial Intelligence to detect potential skin malignancies with high precision. By fusing dermatoscopic image analysis with clinical patient metadata, we provide a comprehensive risk evaluation system for early support.</p>
+          
+          <div style="background: #fdf2f2; border: 1px solid #fecaca; color: #991b1b; padding: 1rem; border-radius: 0.5rem; max-width: 700px; margin: 0 auto 2.5rem; font-size: 0.95rem; line-height: 1.4;">
+            <strong>Medical Disclaimer:</strong> This is an AI-automated detection tool. Please be aware that AI can sometimes provide incorrect results. <strong>Always consult a qualified doctor or dermatologist for a professional diagnosis before confirming any medical results.</strong>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: center;">
+            <button class="btn btn-primary" onclick="showView('register')">Start Free Analysis</button>
+            <button class="btn btn-outline" onclick="showView('login')">Clinical Login</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- How it Works section -->
+      <div class="container" style="padding: 4rem 0;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">How It <span>Works</span></h2>
+          <p style="color: var(--text-light);">Our multimodal process ensures clinical-grade precision.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">1</div>
+            <h3>Image Upload</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Upload a high-resolution dermatoscopic scan of the skin lesion for visual feature extraction.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">2</div>
+            <h3>Metadata Entry</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Provide essential clinical markers like location, sex, and elevation to ground the image analysis.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">3</div>
+            <h3>AI Fusion</h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Our EfficientNet-B2 and XGBoost models fuse data to calculate a precise malignancy risk score.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why AI section -->
+      <div style="background: white; padding: 4rem 0; border-top: 1px solid var(--border);">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+            <div>
+              <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Why <span>DermVision AI?</span></h2>
+              <p style="margin-bottom: 1rem;">AI-driven diagnostics allow for rapid screening and early detection, which is crucial in effective skin cancer treatment. Our system leverages millions of trained clinical data points to identify patterns invisible to the human eye.</p>
+              <ul style="list-style: none; display: grid; gap: 1rem;">
+                <li style="display: flex; gap: 0.5rem; align-items: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  94%+ Accuracy on Image Training Set
+                </li>
+                <li style="display: flex; gap: 0.5rem; align-items: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Real-time Multimodal Late Fusion
+                </li>
+                <li style="display: flex; gap: 0.5rem; align-items: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  Secure Clinical History Tracking
+                </li>
+              </ul>
+            </div>
+            <div style="background: var(--bg); height: 300px; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.2;"><path d="M12 2v20"/><path d="M22 12H2"/><path d="m17 7-5 5-5-5"/><path d="m17 17-5-5-5 5"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login View -->
+    <section id="loginView" class="hidden animate-fade-in">
+      <div class="auth-card">
+        <h2>Welcome Back</h2>
+        <p>Enter your credentials to access your account</p>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="loginEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+          <p style="margin-top: 1.5rem;">Don't have an account? <a href="#" onclick="showView('register')" style="color: var(--primary); font-weight: 600;">Create one</a></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Register View -->
+    <section id="registerView" class="hidden animate-fade-in">
+      <div class="auth-card">
+        <h2>Create Account</h2>
+        <p>Join DermVision for professional clinical analysis</p>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="regName" placeholder="Dr. Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="regEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="regPassword" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+          <p style="margin-top: 1.5rem;">Already have an account? <a href="#" onclick="showView('login')" style="color: var(--primary); font-weight: 600;">Sign in</a></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Prediction/Dashboard View -->
+    <section id="dashboardView" class="container hidden animate-fade-in app-container">
+      <div style="margin-bottom: 2rem;">
+        <h2 id="welcomeMsg">Welcome, Doctor</h2>
+        <p style="color: var(--text-light);">Submit clinical data for multimodal analysis.</p>
+      </div>
+
+      <div class="prediction-grid">
+        <div class="card">
+          <h3>Diagnosis Request</h3>
+          <form id="predictionForm" onsubmit="handlePredict(event)" style="margin-top: 1.5rem;">
+            <div class="form-group">
+              <label>Skin Lesion Image</label>
+              <input type="file" id="predictFile" accept="image/*" required onchange="previewImage(event)">
+              <div id="imagePreview" style="margin-top: 1rem; display: none;">
+                <img id="previewImg" src="" style="max-width: 100%; border-radius: 0.5rem; border: 1px solid var(--border);">
+              </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label>Sex</label>
+                <select id="pSex">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Location</label>
+                <select id="pLoc">
+                  <option value="back">Back</option>
+                  <option value="chest">Chest</option>
+                  <option value="face">Face</option>
+                  <option value="leg">Leg</option>
+                  <option value="arm">Arm</option>
+                  <option value="neck">Neck</option>
+                  <option value="hand">Hand</option>
+                  <option value="foot">Foot</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label>Elevation</label>
+                <select id="pElevation">
+                  <option value="palpable">Palpable</option>
+                  <option value="flat">Flat</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Difficulty</label>
+                <select id="pDiff">
+                  <option value="medium">Medium</option>
+                  <option value="easy">Easy</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border);">
+              <h4 style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Lesion Characteristics (Dermoscopy)</h4>
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label>Pigment Network</label>
+                  <select id="pPigNet">
+                    <option value="absent">Absent</option>
+                    <option value="typical">Typical</option>
+                    <option value="atypical">Atypical</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Streaks</label>
+                  <select id="pStreaks">
+                    <option value="absent">Absent</option>
+                    <option value="regular">Regular</option>
+                    <option value="irregular">Irregular</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Pigmentation</label>
+                <select id="pPigment">
+                  <option value="absent">Absent</option>
+                  <option value="diffuse">Diffuse</option>
+                  <option value="localized">Localized</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" id="predictBtn" class="btn btn-primary" style="width: 100%;">Run AI Analysis</button>
+          </form>
+        </div>
+
+        <div class="card" id="resultCard" style="opacity: 0.5;">
+          <h3>Analysis Result</h3>
+          <div id="resultContent" style="margin-top: 2rem; text-align: center;">
+            <p style="color: var(--text-light);">Submit a request to see clinical findings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- History/Admin View -->
+    <section id="historyView" class="hidden animate-fade-in">
+      <div style="display: flex; min-height: calc(100vh - 70px);">
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar" class="sidebar sidebar-collapsed">
+          <div style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap;">
+            <div id="hamburgerIcon" class="hamburger-btn" onclick="toggleSidebar()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+            <span class="sidebar-label" style="font-weight: 700;">Admin Menu</span>
+          </div>
+          <nav class="sidebar-nav">
+            <button onclick="setAdminSubView('overview')" id="btnOver" class="btn btn-primary sidebar-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 18px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <span class="sidebar-label">Overview</span>
+            </button>
+            <button onclick="setAdminSubView('audit')" id="btnAudit" class="btn btn-ghost sidebar-btn" style="margin-top: 5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 18px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span class="sidebar-label">Audit Logs</span>
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div style="flex: 1; min-width: 0; padding: 2rem; background: var(--bg); overflow-y: auto;">
+          <!-- Overview Sub-view -->
+          <div id="adminOverview">
+            <div style="margin-bottom: 2rem;">
+              <h1>Hospital <span>Admin</span> Panel</h1>
+              <p style="color: var(--text-light);">Global diagnostic performance and malignancy trends.</p>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem;">
+              <div class="card" style="margin-bottom: 0;">
+                <p style="color: var(--text-light); font-size: 0.8rem;">Total Requests</p>
+                <h2 id="statTotal" style="font-size: 2rem;">0</h2>
+              </div>
+              <div class="card" style="margin-bottom: 0; border-left: 4px solid var(--danger);">
+                <p style="color: var(--text-light); font-size: 0.8rem;">Malignant Detected</p>
+                <h2 id="statMalignant" style="font-size: 2rem; color: var(--danger);">0</h2>
+              </div>
+              <div class="card" style="margin-bottom: 0; border-left: 4px solid var(--success);">
+                <p style="color: var(--text-light); font-size: 0.8rem;">Benign Cases</p>
+                <h2 id="statBenign" style="font-size: 2rem; color: var(--success);">0</h2>
+              </div>
+              <div class="card" style="margin-bottom: 0;">
+                <p style="color: var(--text-light); font-size: 0.8rem;">Avg. Confidence</p>
+                <h2 id="statConfidence" style="font-size: 2rem;">0%</h2>
+              </div>
+            </div>
+
+            <div class="grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+              <div class="card">
+                <h3>Detection Trends</h3>
+                <div style="height: 350px; margin-top: 1rem;">
+                  <canvas id="trendsChart"></canvas>
+                </div>
+              </div>
+              <div class="card">
+                <h3>Malignancy Distribution</h3>
+                <div style="height: 350px; margin-top: 1rem;">
+                  <canvas id="distChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Audit Log Sub-view -->
+          <div id="adminAudit" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <h3>Clinical Audit Log</h3>
+              <button class="btn btn-outline btn-sm" onclick="clearHistory()">Wipe Logs</button>
+            </div>
+            <div class="card history-table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Entry Date</th>
+                    <th>Scan</th>
+                    <th>Submitter</th>
+                    <th>Clinical Params</th>
+                    <th>Status</th>
+                    <th>Confidence</th>
+                  </tr>
+                </thead>
+                <tbody id="historyTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Configuration
+    const API_URL = "http://localhost:8000";
+    const ADMIN_CREDS = { email: "admin@gmail.com", password: "12345" };
+
+    // State
+    let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    let history = JSON.parse(localStorage.getItem('history')) || [];
+
+    // Initialize App
+    document.addEventListener('DOMContentLoaded', () => {
+      updateNavbar();
+      if (currentUser) {
+        if (currentUser.isAdmin) {
+          showView('history');
+          setAdminSubView('overview');
+        } else {
+          showView('dashboard');
+        }
+      } else {
+        showView('hero');
+      }
+    });
+
+    // Navigation and View Control
+    function showView(viewName) {
+      const views = ['hero', 'login', 'register', 'dashboard', 'history'];
+      views.forEach(view => {
+        const el = document.getElementById(view + 'View');
+        if (el) el.classList.add('hidden');
+      });
+      const activeView = document.getElementById(viewName + 'View');
+      if (activeView) activeView.classList.remove('hidden');
+      
+      if (viewName === 'dashboard' && currentUser) {
+        document.getElementById('welcomeMsg').innerText = `Welcome, ${currentUser.name}`;
+      }
+      
+      if (viewName === 'history') {
+        renderHistory();
+      }
+      
+      window.scrollTo(0, 0);
+    }
+
+    function updateNavbar() {
+      const navLinks = document.getElementById('navLinks');
+      if (currentUser) {
+        let links = '';
+        if (currentUser.isAdmin) {
+          links += `<a href="#" class="btn btn-ghost" onclick="showView('history'); setAdminSubView('overview');">Statistical Dashboard</a>`;
+        } else {
+          links += `<a href="#" class="btn btn-ghost" onclick="showView('dashboard')">New Analysis</a>`;
+        }
+        links += `<button class="btn btn-outline" onclick="logout()">Logout</button>`;
+        navLinks.innerHTML = links;
+      } else {
+        navLinks.innerHTML = `
+          <button class="btn btn-ghost" onclick="showView('login')">Login</button>
+          <button class="btn btn-primary" onclick="showView('register')">Get Started</button>
+        `;
+      }
+    }
+
+    // Notification Helper
+    function showNotification(msg, type = 'success') {
+      const el = document.getElementById('notification');
+      el.innerText = msg;
+      el.className = `notification ${type === 'danger' ? 'danger' : 'success'}`;
+      el.classList.remove('hidden');
+      setTimeout(() => el.classList.add('hidden'), 3000);
+    }
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+
+      if (users.find(u => u.email === email)) {
+        showNotification("Email already exists!", "danger");
+        return;
+      }
+
+      const newUser = { name, email, password, isAdmin: false };
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+      
+      showNotification("Registration Successful! Redirecting to login...", "success");
+      setTimeout(() => showView('login'), 1500);
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (email === ADMIN_CREDS.email && password === ADMIN_CREDS.password) {
+        currentUser = { name: "System Admin", email: email, isAdmin: true };
+      } else {
+        const user = users.find(u => u.email === email && u.password === password);
+        if (!user) {
+          showNotification("Invalid email or password!", "danger");
+          return;
+        }
+        currentUser = user;
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      updateNavbar();
+      
+      if (currentUser.isAdmin) {
+        showView('history'); 
+        setAdminSubView('overview');
+      } else {
+        showView('dashboard');
+      }
+    }
+
+    function logout() {
+      currentUser = null;
+      localStorage.removeItem('currentUser');
+      updateNavbar();
+      showView('hero');
+    }
+
+    // Prediction Logic
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const output = document.getElementById('previewImg');
+        const previewDiv = document.getElementById('imagePreview');
+        output.src = reader.result;
+        previewDiv.style.display = 'block';
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+
+    async function handlePredict(e) {
+      e.preventDefault();
+      const btn = document.getElementById('predictBtn');
+      const fileInput = document.getElementById('predictFile');
+      const resultCard = document.getElementById('resultCard');
+      const resultContent = document.getElementById('resultContent');
+      
+      if (!fileInput.files[0]) return;
+
+      btn.disabled = true;
+      btn.innerText = "Analyzing scan...";
+      resultCard.style.opacity = "1";
+      resultContent.innerHTML = `<div style="padding: 2rem;"><p>Processing clinical data...</p></div>`;
+
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      formData.append('sex', document.getElementById('pSex').value);
+      formData.append('location', document.getElementById('pLoc').value);
+      formData.append('elevation', document.getElementById('pElevation').value);
+      formData.append('diff', document.getElementById('pDiff').value);
+      formData.append('pig_net', document.getElementById('pPigNet').value);
+      formData.append('streaks', document.getElementById('pStreaks').value);
+      formData.append('pigment', document.getElementById('pPigment').value);
+
+      try {
+        const response = await fetch(`${API_URL}/predict`, {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+
+        if (data.status === "success") {
+          resultContent.innerHTML = `
+            <div style="padding: 1rem;">
+              <div class="badge ${data.label === 'MALIGNANT' ? 'badge-malignant' : 'badge-benign'}" style="font-size: 1.5rem; margin-bottom: 1rem;">
+                ${data.label}
+              </div>
+              <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary);">
+                ${(data.probability * 100).toFixed(1)}%
+              </div>
+              <p style="color: var(--text-light); margin-top: 0.5rem;">Malignancy Risk Score</p>
+              
+              <div style="margin-top: 2rem; text-align: left; background: #f1f5f9; padding: 1rem; border-radius: 0.5rem; font-size: 0.8rem;">
+                <p><strong>Multimodal Breakdown:</strong></p>
+                <p>Image Probability: ${data.breakdown.image_component}</p>
+                <p>Tabular Probability: ${data.breakdown.tabular_component}</p>
+              </div>
+            </div>
+          `;
+
+          const reader = new FileReader();
+          reader.onload = function() {
+            const historyItem = {
+              id: Date.now(),
+              userEmail: currentUser.email,
+              userName: currentUser.name,
+              date: new Date().toLocaleString(),
+              result: data.label,
+              probability: data.probability,
+              image: reader.result,
+              inputs: {
+                sex: document.getElementById('pSex').value,
+                location: document.getElementById('pLoc').value,
+                characteristics: `${document.getElementById('pPigNet').value}, ${document.getElementById('pStreaks').value}, ${document.getElementById('pPigment').value}`
+              }
+            };
+            history.unshift(historyItem);
+            localStorage.setItem('history', JSON.stringify(history));
+          };
+          reader.readAsDataURL(fileInput.files[0]);
+
+        } else {
+          resultContent.innerHTML = `<p style="color: var(--danger);">Error: ${data.message}</p>`;
+        }
+      } catch (err) {
+        resultContent.innerHTML = `<p style="color: var(--danger);">Failed to connect to AI Server. Make sure app.py is running.</p>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerText = "Run AI Analysis";
+      }
+    }
+
+    // Admin Specific Logic
+    let distChart = null;
+    let trendsChart = null;
+
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      sb.classList.toggle('sidebar-collapsed');
+      
+      // Give the CSS transition (0.3s) a moment to finish, then resize charts
+      setTimeout(() => {
+        if (distChart && trendsChart) {
+          distChart.resize();
+          trendsChart.resize();
+        }
+      }, 310);
+    }
+
+    function setAdminSubView(view) {
+      const views = ['overview', 'audit'];
+      views.forEach(v => {
+        document.getElementById(`admin${v.charAt(0).toUpperCase() + v.slice(1)}`).classList.add('hidden');
+        const btnId = v === 'overview' ? 'btnOver' : 'btnAudit';
+        const el = document.getElementById(btnId);
+        if (el) el.classList.replace('btn-primary', 'btn-ghost');
+      });
+
+      const activeId = view === 'overview' ? 'adminOverview' : 'adminAudit';
+      document.getElementById(activeId).classList.remove('hidden');
+      
+      const activeBtnId = view === 'overview' ? 'btnOver' : 'btnAudit';
+      const activeBtn = document.getElementById(activeBtnId);
+      if (activeBtn) activeBtn.classList.replace('btn-ghost', 'btn-primary');
+      
+      if (view === 'overview') {
+        renderHistory();
+        setTimeout(initCharts, 200); // Wait for DOM layout
+      }
+      if (view === 'audit') {
+        renderHistory();
+      }
+    }
+
+    function initCharts() {
+      const canvas1 = document.getElementById('distChart');
+      const canvas2 = document.getElementById('trendsChart');
+      if (!canvas1 || !canvas2) return;
+      if (distChart) distChart.destroy();
+      if (trendsChart) trendsChart.destroy();
+
+      history = JSON.parse(localStorage.getItem('history')) || [];
+      if (history.length === 0) return;
+
+      const malignant = history.filter(h => h.result === 'MALIGNANT').length;
+      const benign = history.length - malignant;
+
+      distChart = new Chart(canvas1, {
+        type: 'doughnut',
+        data: {
+          labels: ['Malignant', 'Benign'],
+          datasets: [{
+            data: [malignant, benign],
+            backgroundColor: ['#ef4444', '#10b981'],
+            borderWidth: 0
+          }]
+        },
+        options: { responsive: true, maintainAspectRatio: false }
+      });
+
+      trendsChart = new Chart(canvas2, {
+        type: 'line',
+        data: {
+          labels: history.slice(0, 10).reverse().map(h => h.date.split(',')[0]),
+          datasets: [{
+            label: 'Malignancy Risk %',
+            data: history.slice(0, 10).reverse().map(h => (h.probability * 100).toFixed(1)),
+            borderColor: '#2563eb',
+            backgroundColor: 'rgba(37, 99, 235, 0.1)',
+            fill: true,
+            tension: 0.4
+          }]
+        },
+        options: { 
+          responsive: true, 
+          maintainAspectRatio: false,
+          scales: { y: { min: 0, max: 100 } }
+        }
+      });
+    }
+
+    function renderHistory() {
+      const tableBody = document.getElementById('historyTableBody');
+      history = JSON.parse(localStorage.getItem('history')) || [];
+      
+      const total = history.length;
+      const malignant = history.filter(h => h.result === 'MALIGNANT').length;
+      const benign = total - malignant;
+      const avgRisk = total > 0 ? (history.reduce((acc, h) => acc + h.probability, 0) / total * 100).toFixed(1) : 0;
+
+      document.getElementById('statTotal').innerText = total;
+      document.getElementById('statMalignant').innerText = malignant;
+      document.getElementById('statBenign').innerText = benign;
+      document.getElementById('statConfidence').innerText = `${avgRisk}%`;
+
+      tableBody.innerHTML = '';
+      history.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.date}</td>
+          <td><img src="${item.image}" class="history-img" onclick="window.open(this.src)"></td>
+          <td><strong>${item.userName}</strong><br><small>${item.userEmail}</small></td>
+          <td style="font-size: 0.8rem;">
+            Sex: ${item.inputs.sex}<br>
+            Loc: ${item.inputs.location}<br>
+            Derm: ${item.inputs.characteristics}
+          </td>
+          <td><span class="badge ${item.result === 'MALIGNANT' ? 'badge-malignant' : 'badge-benign'}">${item.result}</span></td>
+          <td style="font-weight: 700;">${(item.probability * 100).toFixed(1)}%</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function clearHistory() {
+      if (confirm("Are you sure you want to clear clinical history?")) {
+        localStorage.setItem('history', JSON.stringify([]));
+        history = [];
+        renderHistory();
+        initCharts();
+      }
+    }
+  </script>
+</body>
+</html>
