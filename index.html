@@ -148,11 +148,11 @@
         <form id="loginForm" onsubmit="handleLogin(event)">
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" id="loginEmail" placeholder="name@example.com" required>
+            <input type="email" id="loginEmail" placeholder="name@example.com" autocomplete="username" required>
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="password" id="loginPassword" placeholder="••••••••" required>
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" required>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
           <p style="margin-top: 1.5rem;">Don't have an account? <a href="#" onclick="showView('register')"
@@ -169,15 +169,15 @@
         <form id="registerForm" onsubmit="handleRegister(event)">
           <div class="form-group">
             <label>Full Name</label>
-            <input type="text" id="regName" placeholder="Dr. Jane Doe" required>
+            <input type="text" id="regName" placeholder="Dr. Jane Doe" autocomplete="name" required>
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" id="regEmail" placeholder="name@example.com" required>
+            <input type="email" id="regEmail" placeholder="name@example.com" autocomplete="username" required>
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="password" id="regPassword" placeholder="••••••••" required>
+            <input type="password" id="regPassword" placeholder="••••••••" autocomplete="new-password" required>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
           <p style="margin-top: 1.5rem;">Already have an account? <a href="#" onclick="showView('login')"
