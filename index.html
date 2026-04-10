@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
   <div id="notification" class="notification hidden"></div>
   <!-- Navigation -->
   <nav>
     <div class="container nav-content">
       <a href="#" class="logo" onclick="showView('hero')">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-activity">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+        </svg>
         DermVision
       </a>
       <div class="nav-links" id="navLinks">
@@ -27,16 +33,21 @@
 
   <!-- Views -->
   <main id="mainContent">
-    
+
     <!-- Hero View -->
     <section id="heroView" class="animate-fade-in">
       <div class="hero">
         <div class="container">
           <h1>Advanced AI for <span>Skin Cancer</span> Detection</h1>
-          <p>DermVision utilizes state-of-the-art multimodal Artificial Intelligence to detect potential skin malignancies with high precision. By fusing dermatoscopic image analysis with clinical patient metadata, we provide a comprehensive risk evaluation system for early support.</p>
-          
-          <div style="background: #fdf2f2; border: 1px solid #fecaca; color: #991b1b; padding: 1rem; border-radius: 0.5rem; max-width: 700px; margin: 0 auto 2.5rem; font-size: 0.95rem; line-height: 1.4;">
-            <strong>Medical Disclaimer:</strong> This is an AI-automated detection tool. Please be aware that AI can sometimes provide incorrect results. <strong>Always consult a qualified doctor or dermatologist for a professional diagnosis before confirming any medical results.</strong>
+          <p>DermVision utilizes state-of-the-art multimodal Artificial Intelligence to detect potential skin
+            malignancies with high precision. By fusing dermatoscopic image analysis with clinical patient metadata, we
+            provide a comprehensive risk evaluation system for early support.</p>
+
+          <div
+            style="background: #fdf2f2; border: 1px solid #fecaca; color: #991b1b; padding: 1rem; border-radius: 0.5rem; max-width: 700px; margin: 0 auto 2.5rem; font-size: 0.95rem; line-height: 1.4;">
+            <strong>Medical Disclaimer:</strong> This is an AI-automated detection tool. Please be aware that AI can
+            sometimes provide incorrect results. <strong>Always consult a qualified doctor or dermatologist for a
+              professional diagnosis before confirming any medical results.</strong>
           </div>
 
           <div style="display: flex; gap: 1rem; justify-content: center;">
@@ -54,19 +65,28 @@
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
           <div class="card" style="text-align: center;">
-            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">1</div>
+            <div
+              style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">
+              1</div>
             <h3>Image Upload</h3>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Upload a high-resolution dermatoscopic scan of the skin lesion for visual feature extraction.</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Upload a high-resolution
+              dermatoscopic scan of the skin lesion for visual feature extraction.</p>
           </div>
           <div class="card" style="text-align: center;">
-            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">2</div>
+            <div
+              style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">
+              2</div>
             <h3>Metadata Entry</h3>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Provide essential clinical markers like location, sex, and elevation to ground the image analysis.</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Provide essential clinical markers
+              like location, sex, and elevation to ground the image analysis.</p>
           </div>
           <div class="card" style="text-align: center;">
-            <div style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">3</div>
+            <div
+              style="width: 50px; height: 50px; background: #eff6ff; color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-weight: 800;">
+              3</div>
             <h3>AI Fusion</h3>
-            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Our EfficientNet-B2 and XGBoost models fuse data to calculate a precise malignancy risk score.</p>
+            <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">Our EfficientNet-B2 and XGBoost
+              models fuse data to calculate a precise malignancy risk score.</p>
           </div>
         </div>
       </div>
@@ -77,24 +97,43 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
             <div>
               <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Why <span>DermVision AI?</span></h2>
-              <p style="margin-bottom: 1rem;">AI-driven diagnostics allow for rapid screening and early detection, which is crucial in effective skin cancer treatment. Our system leverages millions of trained clinical data points to identify patterns invisible to the human eye.</p>
+              <p style="margin-bottom: 1rem;">AI-driven diagnostics allow for rapid screening and early detection, which
+                is crucial in effective skin cancer treatment. Our system leverages millions of trained clinical data
+                points to identify patterns invisible to the human eye.</p>
               <ul style="list-style: none; display: grid; gap: 1rem;">
                 <li style="display: flex; gap: 0.5rem; align-items: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   94%+ Accuracy on Image Training Set
                 </li>
                 <li style="display: flex; gap: 0.5rem; align-items: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   Real-time Multimodal Late Fusion
                 </li>
                 <li style="display: flex; gap: 0.5rem; align-items: center;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   Secure Clinical History Tracking
                 </li>
               </ul>
             </div>
-            <div style="background: var(--bg); height: 300px; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.2;"><path d="M12 2v20"/><path d="M22 12H2"/><path d="m17 7-5 5-5-5"/><path d="m17 17-5-5-5 5"/></svg>
+            <div
+              style="background: var(--bg); height: 300px; border-radius: 1rem; display: flex; align-items: center; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none"
+                stroke="var(--primary)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                style="opacity: 0.2;">
+                <path d="M12 2v20" />
+                <path d="M22 12H2" />
+                <path d="m17 7-5 5-5-5" />
+                <path d="m17 17-5-5-5 5" />
+              </svg>
             </div>
           </div>
         </div>
@@ -116,7 +155,8 @@
             <input type="password" id="loginPassword" placeholder="••••••••" required>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
-          <p style="margin-top: 1.5rem;">Don't have an account? <a href="#" onclick="showView('register')" style="color: var(--primary); font-weight: 600;">Create one</a></p>
+          <p style="margin-top: 1.5rem;">Don't have an account? <a href="#" onclick="showView('register')"
+              style="color: var(--primary); font-weight: 600;">Create one</a></p>
         </form>
       </div>
     </section>
@@ -140,7 +180,8 @@
             <input type="password" id="regPassword" placeholder="••••••••" required>
           </div>
           <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
-          <p style="margin-top: 1.5rem;">Already have an account? <a href="#" onclick="showView('login')" style="color: var(--primary); font-weight: 600;">Sign in</a></p>
+          <p style="margin-top: 1.5rem;">Already have an account? <a href="#" onclick="showView('login')"
+              style="color: var(--primary); font-weight: 600;">Sign in</a></p>
         </form>
       </div>
     </section>
@@ -160,10 +201,11 @@
               <label>Skin Lesion Image</label>
               <input type="file" id="predictFile" accept="image/*" required onchange="previewImage(event)">
               <div id="imagePreview" style="margin-top: 1rem; display: none;">
-                <img id="previewImg" src="" style="max-width: 100%; border-radius: 0.5rem; border: 1px solid var(--border);">
+                <img id="previewImg" src=""
+                  style="max-width: 100%; border-radius: 0.5rem; border: 1px solid var(--border);">
               </div>
             </div>
-            
+
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
               <div class="form-group">
                 <label>Sex</label>
@@ -206,8 +248,9 @@
             </div>
 
             <div style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--border);">
-              <h4 style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Lesion Characteristics (Dermoscopy)</h4>
-              
+              <h4 style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1rem;">Lesion Characteristics
+                (Dermoscopy)</h4>
+
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                 <div class="form-group">
                   <label>Pigment Network</label>
@@ -255,19 +298,40 @@
       <div style="display: flex; min-height: calc(100vh - 70px);">
         <!-- Sidebar Navigation -->
         <aside id="sidebar" class="sidebar sidebar-collapsed">
-          <div style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap;">
+          <div
+            style="margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; overflow: hidden; white-space: nowrap;">
             <div id="hamburgerIcon" class="hamburger-btn" onclick="toggleSidebar()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
             </div>
             <span class="sidebar-label" style="font-weight: 700;">Admin Menu</span>
           </div>
           <nav class="sidebar-nav">
             <button onclick="setAdminSubView('overview')" id="btnOver" class="btn btn-primary sidebar-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 18px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="min-width: 18px;">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <line x1="3" y1="9" x2="21" y2="9" />
+                <line x1="9" y1="21" x2="9" y2="9" />
+              </svg>
               <span class="sidebar-label">Overview</span>
             </button>
-            <button onclick="setAdminSubView('audit')" id="btnAudit" class="btn btn-ghost sidebar-btn" style="margin-top: 5px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 18px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <button onclick="setAdminSubView('audit')" id="btnAudit" class="btn btn-ghost sidebar-btn"
+              style="margin-top: 5px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="min-width: 18px;">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
               <span class="sidebar-label">Audit Logs</span>
             </button>
           </nav>
@@ -348,7 +412,9 @@
 
   <script>
     // Configuration
-    const API_URL = "http://localhost:8000";
+    const API_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" 
+      ? "http://localhost:8000" 
+      : "https://your-app-name.onrender.com"; // <-- REPLACE 'your-app-name' with your actual Render URL
     const ADMIN_CREDS = { email: "admin@gmail.com", password: "12345" };
 
     // State
@@ -380,15 +446,15 @@
       });
       const activeView = document.getElementById(viewName + 'View');
       if (activeView) activeView.classList.remove('hidden');
-      
+
       if (viewName === 'dashboard' && currentUser) {
         document.getElementById('welcomeMsg').innerText = `Welcome, ${currentUser.name}`;
       }
-      
+
       if (viewName === 'history') {
         renderHistory();
       }
-      
+
       window.scrollTo(0, 0);
     }
 
@@ -433,7 +499,7 @@
       const newUser = { name, email, password, isAdmin: false };
       users.push(newUser);
       localStorage.setItem('users', JSON.stringify(users));
-      
+
       showNotification("Registration Successful! Redirecting to login...", "success");
       setTimeout(() => showView('login'), 1500);
     }
@@ -456,9 +522,9 @@
 
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
       updateNavbar();
-      
+
       if (currentUser.isAdmin) {
-        showView('history'); 
+        showView('history');
         setAdminSubView('overview');
       } else {
         showView('dashboard');
@@ -475,7 +541,7 @@
     // Prediction Logic
     function previewImage(event) {
       const reader = new FileReader();
-      reader.onload = function() {
+      reader.onload = function () {
         const output = document.getElementById('previewImg');
         const previewDiv = document.getElementById('imagePreview');
         output.src = reader.result;
@@ -490,7 +556,7 @@
       const fileInput = document.getElementById('predictFile');
       const resultCard = document.getElementById('resultCard');
       const resultContent = document.getElementById('resultContent');
-      
+
       if (!fileInput.files[0]) return;
 
       btn.disabled = true;
@@ -535,7 +601,7 @@
           `;
 
           const reader = new FileReader();
-          reader.onload = function() {
+          reader.onload = function () {
             const historyItem = {
               id: Date.now(),
               userEmail: currentUser.email,
@@ -573,7 +639,7 @@
     function toggleSidebar() {
       const sb = document.getElementById('sidebar');
       sb.classList.toggle('sidebar-collapsed');
-      
+
       // Give the CSS transition (0.3s) a moment to finish, then resize charts
       setTimeout(() => {
         if (distChart && trendsChart) {
@@ -594,11 +660,11 @@
 
       const activeId = view === 'overview' ? 'adminOverview' : 'adminAudit';
       document.getElementById(activeId).classList.remove('hidden');
-      
+
       const activeBtnId = view === 'overview' ? 'btnOver' : 'btnAudit';
       const activeBtn = document.getElementById(activeBtnId);
       if (activeBtn) activeBtn.classList.replace('btn-ghost', 'btn-primary');
-      
+
       if (view === 'overview') {
         renderHistory();
         setTimeout(initCharts, 200); // Wait for DOM layout
@@ -647,8 +713,8 @@
             tension: 0.4
           }]
         },
-        options: { 
-          responsive: true, 
+        options: {
+          responsive: true,
           maintainAspectRatio: false,
           scales: { y: { min: 0, max: 100 } }
         }
@@ -658,7 +724,7 @@
     function renderHistory() {
       const tableBody = document.getElementById('historyTableBody');
       history = JSON.parse(localStorage.getItem('history')) || [];
-      
+
       const total = history.length;
       const malignant = history.filter(h => h.result === 'MALIGNANT').length;
       const benign = total - malignant;
@@ -698,4 +764,5 @@
     }
   </script>
 </body>
+
 </html>
