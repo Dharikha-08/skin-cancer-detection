@@ -55,6 +55,23 @@ function App() {
     setResult(null);
   };
 
+  const onDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragActive(true);
+  };
+
+  const onDragLeave = () => {
+    setDragActive(false);
+  };
+
+  const onDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFileChange(e.dataTransfer.files[0]);
+    }
+  };
+
   const handleUpload = async () => {
     if (!preview) return;
     setLoading(true);
@@ -73,7 +90,7 @@ function App() {
         dataLayer.append(key, value.toString());
       });
 
-      const res = await fetch('http://localhost:8000/predict', {
+      const res = await fetch('https://skin-cancer-detection-uthu.onrender.com/predict', {
         method: 'POST',
         body: dataLayer,
       });
@@ -170,6 +187,9 @@ function App() {
           <div 
             className={`upload-zone ${dragActive ? 'drag-active' : ''}`}
             onClick={() => fileInputRef.current?.click()}
+            onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
+            onDrop={onDrop}
           >
             <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" style={{ display: 'none' }} />
             {preview ? (
